@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Images/LOGO.png" type="image/x-icon">
+    <title>The Sams Bakers - Cake And Bake</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <?php
+    include_once "../config/dbconnect.php";
+    ?>
+
+
+    <!-- product starts-->
+
+    <section class="product" id="product">
+
+        <h1 class="heading">Birthday<span>-Cake</span></h1>
+        <?php
+        include_once "../config/dbconnect.php";
+        $sql = "SELECT * from product WHERE category_id=1";
+        $result = $conn->query($sql);
+        $count = 1;
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?>
+                <?php
+                if ($count % 3 == 1) {
+                ?>
+
+                    <div class="box-container">
+                    <?php
+                }
+                    ?>
+                    <div class="Product-box">
+                        <div class="image">
+                            <img src="../uploads/<?= $row["product_image"]; ?>">
+                        </div>
+                        <div class="content">
+                            <h3><?= $row["product_name"] ?></h3>
+                            <span class="price"><?= $row["price"] ?></span>
+                            <br>
+                            <a href="../index.php#order" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                    <?php
+                    if ($count % 3 == 0) {
+                    ?>
+                    </div>
+                <?php
+                    }
+                ?>
+        <?php
+                $count++;
+            }
+        }
+        ?>
+
+
+    </section>
+
+    <!-- product end-->
+
+
+</body>
+
+</html>
