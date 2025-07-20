@@ -66,63 +66,6 @@ include('./config/dbconnect.php');
         .dropdown:hover .dropbtn {
             background-color: #c98d83;
         }
-
-        /* order */
-
-        .order .row {
-            padding: 2rem 7%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .order .row .image {
-            flex: 1 1 30rem;
-        }
-
-        .order .row .image img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .order .row form {
-            flex: 1 1 50rem;
-            padding: 5rem;
-        }
-
-        .order .row form .inputBox select,
-        .order .row form .inputBox {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .order .row form .inputBox select,
-        .order .row form .inputBox input,
-        .order .row form textarea {
-            padding: 1rem;
-            margin: 1rem 0;
-            font-size: 1.7rem;
-            color: var(--secondary);
-            text-transform: capitalize;
-            background: var(--bg);
-            border-radius: .5rem;
-            width: 49%;
-        }
-
-        .order .row form .inputBox input:focus,
-        .order .row form textarea:focus {
-            border: .1rem solid var(--primary-color);
-        }
-
-        .order .row form textarea {
-            width: 100%;
-            resize: none;
-            height: 15rem;
-        }
-
-        /* order */
     </style>
 </head>
 
