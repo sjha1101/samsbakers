@@ -42,7 +42,7 @@
                     ?>
                     <div class="Product-box">
                         <div class="image">
-                            <img src="../uploads/<?= $row["product_image"]; ?>">
+                            <img src="<?= $row["product_image"]; ?>">
                         </div>
                         <div class="content">
                             <h3><?= $row["product_name"] ?></h3>
